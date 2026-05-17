@@ -144,9 +144,15 @@ REST_FRAMEWORK = {
 }
 
 # CORS
-cors_origins = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:5173')
-CORS_ALLOWED_ORIGINS = [o.strip() for o in cors_origins.split(',') if o.strip()]
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+# CSRF
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.fosterhartley.uk',
+    'https://*.vercel.app',
+    'http://localhost:5173',
+]
 
 # Celery
 if ENV == 'prod':

@@ -28,3 +28,6 @@ wcwidth==0.6.0
 whitenoise==6.9.0
 uvicorn
 flower
+cloudinary
+python-jose[cryptography]==3.3.0
+cryptography==44.0.4

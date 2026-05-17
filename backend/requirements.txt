@@ -29,3 +29,5 @@ whitenoise==6.9.0
 uvicorn
 flower
 cloudinary
+django-cloudinary-storage
+redis

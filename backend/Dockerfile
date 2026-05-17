@@ -8,11 +8,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY backend/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
-COPY backend/ .
+COPY . .
 
 # Create media directory
 RUN mkdir -p /app/media/uploads
@@ -22,5 +22,5 @@ RUN python manage.py collectstatic --noinput 2>/dev/null || true
 
 EXPOSE 8000
 
-# Run migrations on startup, then start gunicorn
-CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn backend.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120"]
+# Default command (will be overridden by docker-compose)
+CMD ["sh", "-c", "python manage.py migrate --noinput && uvicorn backend.asgi:application --host 0.0.0.0:8000 --workers 4"]

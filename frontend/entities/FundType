@@ -1,0 +1,17 @@
+{
+  "name": "FundType",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the fund type"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the fund type"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

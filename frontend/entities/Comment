@@ -1,0 +1,91 @@
+{
+  "name": "Comment",
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "description": "ID of the post this comment belongs to"
+    },
+    "content": {
+      "type": "string",
+      "description": "Comment text content"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Name of the comment author"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of the comment author"
+    },
+    "parent_comment_id": {
+      "type": "string",
+      "description": "ID of parent comment for nested replies"
+    },
+    "media_url": {
+      "type": "string",
+      "description": "URL to media attachment (image/video/gif)"
+    },
+    "media_type": {
+      "type": "string",
+      "enum": [
+        "none",
+        "image",
+        "video",
+        "gif",
+        "sticker"
+      ],
+      "default": "none",
+      "description": "Type of media attached"
+    },
+    "voice_note_url": {
+      "type": "string",
+      "description": "URL to voice note audio file"
+    },
+    "mentioned_users": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of mentioned user emails"
+    },
+    "reactions": {
+      "type": "object",
+      "description": "Emoji reactions count"
+    }
+  },
+  "required": [
+    "post_id",
+    "content",
+    "author_name",
+    "author_email"
+  ],
+  "rls": {
+    "create": true,
+    "delete": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "read": true,
+    "update": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

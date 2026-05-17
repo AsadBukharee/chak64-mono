@@ -1,0 +1,77 @@
+{
+  "name": "Campaign",
+  "type": "object",
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "description": "Campaign ID in format C64-XXXX"
+    },
+    "title": {
+      "type": "string",
+      "description": "Campaign title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Campaign description"
+    },
+    "media_url": {
+      "type": "string",
+      "description": "URL to media (image/video/document)"
+    },
+    "media_type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video",
+        "document"
+      ],
+      "description": "Type of media"
+    },
+    "target_amount": {
+      "type": "number",
+      "description": "Target amount to raise"
+    },
+    "collected_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Amount collected so far"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Campaign start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Campaign end date"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether campaign is active"
+    }
+  },
+  "required": [
+    "campaign_id",
+    "title",
+    "description",
+    "target_amount",
+    "start_date",
+    "end_date"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "SurveyResponse",
+  "type": "object",
+  "properties": {
+    "survey_id": {
+      "type": "string",
+      "description": "Reference to Survey entity"
+    },
+    "team_id": {
+      "type": "string",
+      "description": "Reference to Team entity"
+    },
+    "respondent_name": {
+      "type": "string",
+      "description": "Name of the person surveyed"
+    },
+    "respondent_address": {
+      "type": "string",
+      "description": "Address of the respondent"
+    },
+    "answers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Array of question-answer pairs"
+    },
+    "submitted_by": {
+      "type": "string",
+      "description": "Email of the team member who submitted"
+    },
+    "submitted_by_name": {
+      "type": "string",
+      "description": "Name of the submitter"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional observations"
+    }
+  },
+  "required": [
+    "survey_id",
+    "team_id",
+    "respondent_name"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Survey",
+  "type": "object",
+  "properties": {
+    "team_id": {
+      "type": "string",
+      "description": "Reference to Team entity"
+    },
+    "title": {
+      "type": "string",
+      "description": "Survey title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Survey description and purpose"
+    },
+    "survey_type": {
+      "type": "string",
+      "enum": [
+        "household",
+        "infrastructure",
+        "health",
+        "education",
+        "general"
+      ],
+      "default": "general",
+      "description": "Type of survey"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "completed"
+      ],
+      "default": "draft",
+      "description": "Survey status"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "number",
+              "yes_no",
+              "multiple_choice"
+            ]
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "description": "List of survey questions"
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Email of the creator"
+    },
+    "created_by_name": {
+      "type": "string",
+      "description": "Name of the creator"
+    }
+  },
+  "required": [
+    "team_id",
+    "title",
+    "survey_type"
+  ]
+}

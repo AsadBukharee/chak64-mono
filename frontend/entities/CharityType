@@ -1,0 +1,17 @@
+{
+  "name": "CharityType",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the charity type"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the charity type"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

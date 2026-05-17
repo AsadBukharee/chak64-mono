@@ -1,0 +1,53 @@
+{
+  "name": "Team",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Team name, e.g. Helping Hands"
+    },
+    "description": {
+      "type": "string",
+      "description": "Purpose and goals of the team"
+    },
+    "team_type": {
+      "type": "string",
+      "enum": [
+        "zakat_collection",
+        "needy_support",
+        "survey",
+        "general"
+      ],
+      "default": "general",
+      "description": "Primary function of the team"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "active",
+      "description": "Team status"
+    },
+    "created_by_name": {
+      "type": "string",
+      "description": "Name of the admin who created the team"
+    },
+    "member_emails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of member email addresses"
+    },
+    "cover_image_url": {
+      "type": "string",
+      "description": "Team cover image URL"
+    }
+  },
+  "required": [
+    "name",
+    "team_type"
+  ]
+}

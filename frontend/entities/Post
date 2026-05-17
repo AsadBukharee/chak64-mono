@@ -1,0 +1,47 @@
+{
+  "name": "Post",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "Post content text"
+    },
+    "media_url": {
+      "type": "string",
+      "description": "URL to media (image/video)"
+    },
+    "media_type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video",
+        "none"
+      ],
+      "default": "none",
+      "description": "Type of media attached"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Name of the post author"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of the post author"
+    },
+    "likes_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of likes"
+    },
+    "comments_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of comments"
+    }
+  },
+  "required": [
+    "content",
+    "author_name",
+    "author_email"
+  ]
+}

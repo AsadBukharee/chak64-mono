@@ -1,0 +1,32 @@
+{
+  "name": "Poll",
+  "type": "object",
+  "properties": {
+    "question": {
+      "type": "string",
+      "description": "Poll question"
+    },
+    "description": {
+      "type": "string",
+      "description": "Poll description"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Poll end date"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether poll is currently active"
+    },
+    "total_votes": {
+      "type": "number",
+      "default": 0,
+      "description": "Total number of votes"
+    }
+  },
+  "required": [
+    "question"
+  ]
+}

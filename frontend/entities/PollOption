@@ -1,0 +1,23 @@
+{
+  "name": "PollOption",
+  "type": "object",
+  "properties": {
+    "poll_id": {
+      "type": "string",
+      "description": "ID of the poll this option belongs to"
+    },
+    "option_text": {
+      "type": "string",
+      "description": "The option text"
+    },
+    "votes_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of votes for this option"
+    }
+  },
+  "required": [
+    "poll_id",
+    "option_text"
+  ]
+}

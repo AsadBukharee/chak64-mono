@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/db.sqlite3
+*.pyc
+__pycache__
+
+# Node
+frontend/node_modules/
+frontend/.env
+frontend/.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Docs
+*.md
+!README.md

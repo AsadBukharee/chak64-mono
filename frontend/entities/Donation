@@ -1,0 +1,66 @@
+{
+  "name": "Donation",
+  "type": "object",
+  "properties": {
+    "donor_name": {
+      "type": "string",
+      "description": "Name of the donor"
+    },
+    "donor_email": {
+      "type": "string",
+      "description": "Email of the donor"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Donation amount"
+    },
+    "donation_type": {
+      "type": "string",
+      "enum": [
+        "charity",
+        "sponsor_fund",
+        "campaign"
+      ],
+      "description": "Type of donation"
+    },
+    "charity_type": {
+      "type": "string",
+      "description": "For charity donations - type (zakat, marriage, medical, construction)"
+    },
+    "fund_type": {
+      "type": "string",
+      "description": "For sponsor fund - type (imam masjid, educational fund)"
+    },
+    "campaign_id": {
+      "type": "string",
+      "description": "For campaign donations - campaign ID"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether donor identity should be public"
+    },
+    "location": {
+      "type": "string",
+      "description": "Donor location"
+    },
+    "account_number": {
+      "type": "string",
+      "description": "Account number for donation"
+    },
+    "bank_title": {
+      "type": "string",
+      "description": "Donor's bank account title"
+    },
+    "transaction_screenshot": {
+      "type": "string",
+      "description": "URL of the transaction screenshot"
+    }
+  },
+  "required": [
+    "donor_name",
+    "donor_email",
+    "amount",
+    "donation_type"
+  ]
+}

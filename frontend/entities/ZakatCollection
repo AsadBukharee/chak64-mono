@@ -1,0 +1,54 @@
+{
+  "name": "ZakatCollection",
+  "type": "object",
+  "properties": {
+    "team_id": {
+      "type": "string",
+      "description": "Reference to Team entity"
+    },
+    "collector_name": {
+      "type": "string",
+      "description": "Name of the team member who collected"
+    },
+    "collector_email": {
+      "type": "string",
+      "description": "Email of the collector"
+    },
+    "donor_name": {
+      "type": "string",
+      "description": "Name of the person giving zakat"
+    },
+    "donor_address": {
+      "type": "string",
+      "description": "Donor's address or house number"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Amount of zakat collected"
+    },
+    "collection_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of collection"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "collected",
+        "pending",
+        "distributed"
+      ],
+      "default": "collected"
+    }
+  },
+  "required": [
+    "team_id",
+    "collector_name",
+    "donor_name",
+    "amount"
+  ]
+}

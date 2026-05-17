@@ -1,0 +1,59 @@
+{
+  "name": "Advertisement",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Advertisement title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Advertisement content/description"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Advertisement image URL"
+    },
+    "link_url": {
+      "type": "string",
+      "description": "Link when user clicks the ad"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the ad is currently active"
+    },
+    "placement": {
+      "type": "string",
+      "enum": [
+        "feed",
+        "sidebar",
+        "banner"
+      ],
+      "default": "feed",
+      "description": "Where the ad appears"
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": true,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

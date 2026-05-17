@@ -1,0 +1,73 @@
+{
+  "name": "LiveBroadcast",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Broadcast title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Broadcast description"
+    },
+    "broadcaster_name": {
+      "type": "string",
+      "description": "Name of the broadcaster"
+    },
+    "broadcaster_email": {
+      "type": "string",
+      "description": "Email of the broadcaster"
+    },
+    "stream_url": {
+      "type": "string",
+      "description": "Live stream URL or embed code"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Broadcast thumbnail image"
+    },
+    "is_live": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether broadcast is currently live"
+    },
+    "viewers_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Current number of viewers"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Broadcast start time"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Broadcast end time"
+    }
+  },
+  "required": [
+    "title",
+    "broadcaster_name",
+    "broadcaster_email"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": true,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

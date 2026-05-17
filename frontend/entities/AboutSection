@@ -1,0 +1,28 @@
+{
+  "name": "AboutSection",
+  "type": "object",
+  "properties": {
+    "section_key": {
+      "type": "string",
+      "description": "Unique identifier for the section (e.g., 'mission', 'vision')"
+    },
+    "title": {
+      "type": "string",
+      "description": "Section title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Section content"
+    },
+    "order": {
+      "type": "number",
+      "default": 0,
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "section_key",
+    "title",
+    "content"
+  ]
+}

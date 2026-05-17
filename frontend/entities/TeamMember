@@ -1,0 +1,37 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "team_id": {
+      "type": "string",
+      "description": "Reference to Team entity"
+    },
+    "member_email": {
+      "type": "string",
+      "description": "Email of the team member"
+    },
+    "member_name": {
+      "type": "string",
+      "description": "Full name of the team member"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "leader",
+        "member"
+      ],
+      "default": "member",
+      "description": "Role within the team"
+    },
+    "joined_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the member joined"
+    }
+  },
+  "required": [
+    "team_id",
+    "member_email",
+    "member_name"
+  ]
+}

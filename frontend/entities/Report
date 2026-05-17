@@ -1,0 +1,57 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "description": "ID of the reported post"
+    },
+    "reporter_email": {
+      "type": "string",
+      "description": "Email of the person reporting"
+    },
+    "reporter_name": {
+      "type": "string",
+      "description": "Name of the person reporting"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "spam",
+        "hate_speech",
+        "violence",
+        "misinformation",
+        "nudity",
+        "other"
+      ],
+      "description": "Reason for reporting"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes from reporter"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewed",
+        "dismissed"
+      ],
+      "default": "pending",
+      "description": "Admin review status"
+    },
+    "post_author_email": {
+      "type": "string",
+      "description": "Email of the post author"
+    },
+    "post_content_preview": {
+      "type": "string",
+      "description": "First 200 chars of the post content"
+    }
+  },
+  "required": [
+    "post_id",
+    "reporter_email",
+    "reason"
+  ]
+}
